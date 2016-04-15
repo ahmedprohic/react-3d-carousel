@@ -23,15 +23,27 @@ var Carousel = React.createClass({
         this.depot.onNextProps(nextProps);
     },
     render: function render() {
-        var angle = 2 * Math.PI / this.state.figures.length;
-        var translateZ = -Layout[this.props.layout].distance(this.props.width, this.state.figures.length);
-        var figures = this.state.figures.map(function (d, i) {
+
+        var figures,
+            angle = 2 * Math.PI / this.state.figures.length,
+            translateZ = -Layout[this.props.layout].distance(this.props.width, this.state.figures.length);
+
+        figures = this.state.figures.map(function (d, i) {
+            var element;
+
+            if (d.image && d.image.props) {
+                element = d.image
+            } else {
+                element = React.createElement('img', { src: d.image, alt: i, height: '100%', width: '100%' })
+            }
+
             return React.createElement(
                 'figure',
                 { key: i, style: Util.figureStyle(d) },
-                React.createElement('img', { src: d.image, alt: i, height: '100%', width: '100%' })
+                element
             );
         });
+
         return React.createElement(
             'section',
             { className: 'react-3d-carousel' },
