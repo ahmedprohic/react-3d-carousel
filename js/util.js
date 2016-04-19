@@ -5,7 +5,7 @@ var _exports = module.exports = {};
 _exports.figureStyle = function figureStyle(d) {
     var translateX = Object.hasOwnProperty.call(d, 'translateX') ? d.translateX : 0;
     return {
-        transform: 'rotateY(' + d.rotateY + 'rad) ' + ' translateX(' + translateX + 'px)' + ' translateZ(' + d.translateZ + 'px)',
+        transform: 'rotateY(' + d.rotateY + 'rad) ' + ' translateX(' + translateX + 'vh)' + ' translateZ(' + d.translateZ + 'vh)',
         opacity: d.opacity
     };
 };

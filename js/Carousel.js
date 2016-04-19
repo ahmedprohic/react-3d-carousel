@@ -50,7 +50,7 @@ var Carousel = React.createClass({
             React.createElement(
                 'div',
                 { className: 'carousel',
-                    style: { transform: 'translateZ(' + translateZ + 'px)' } },
+                    style: { transform: 'translateZ(' + translateZ + 'vh)' } },
                 figures
             ),
             React.createElement('div', { className: 'prev', onClick: Util.partial(this.onRotate, +angle) }),

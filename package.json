@@ -1,6 +1,6 @@
 {
   "name": "react-3d-obj-carousel",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A 3D carousel written in react",
   "main": "js/Carousel.js",
   "scripts": {
